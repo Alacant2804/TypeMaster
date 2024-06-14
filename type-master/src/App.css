@@ -1,0 +1,19 @@
+.window-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.blurry-text {
+  filter: blur(8px);
+  transition: filter 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.typing-area {
+  width: 60%;
+}
