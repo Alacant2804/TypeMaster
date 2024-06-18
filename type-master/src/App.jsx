@@ -1,27 +1,28 @@
-import {useState} from 'react';
-import TypingTest from './TypingTest';
+import { useState, useEffect } from "react";
+import TypingField from "./TypingField";
 import "./App.css";
 
 function App() {
   const [isStarted, setIsStarted] = useState(false);
 
-  const handleStartTyping = () => {
-    setIsStarted(true);
-  };
+  // Listen for key press to start typing
+  useEffect(() => {
+    const handleKeyDown = () => {
+      if (!isStarted) {
+        setIsStarted(true);
+      }
+    };
 
-  const handleFinishTyping = () => {
-    setIsStarted(false);
-  };
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isStarted]);
 
   return (
-    <div className='window-area'>
-      {!isStarted ? (
-        <div className="blurry-text" onKeyDown={handleStartTyping} tabIndex={0} role="button">
-          <p>Please press any key to start</p>
-        </div>
-      ) : (
-        <TypingTest className="typing area" handleFinishTyping={handleFinishTyping} />
-      )}
+    <div className={`window-area ${isStarted ? "" : "blurred"}`}>
+      <TypingField />
     </div>
   );
 }
