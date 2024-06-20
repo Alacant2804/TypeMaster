@@ -7,8 +7,9 @@ function App() {
 
   // Listen for key press to start typing
   useEffect(() => {
-    const handleKeyDown = () => {
+    const handleKeyDown = (event) => {
       if (!isStarted) {
+        event.preventDefault(); // Prevent the first key from being passed to input
         setIsStarted(true);
       }
     };
@@ -21,8 +22,15 @@ function App() {
   }, [isStarted]);
 
   return (
-    <div className={`window-area ${isStarted ? "" : "blurred"}`}>
-      <TypingField />
+    <div className="text-container">
+      {!isStarted && (
+        <div className="overlay">
+          <p>Please press any key to start</p>
+        </div>
+      )}
+      <div className={`window-area ${isStarted ? "" : "blurred"}`}>
+        <TypingField />
+      </div>
     </div>
   );
 }
