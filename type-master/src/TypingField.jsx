@@ -60,7 +60,7 @@ export default function TypingField() {
     const errorCount = calculateErrors(typedText, currentText);
     setErrors(errorCount);
 
-    if (userInput.length === currentText.length) {
+    if (typedText.length === currentText.length) {
       clearInterval(intervalRef.current);
       setShowModal(true);
     }
