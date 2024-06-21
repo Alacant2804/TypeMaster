@@ -85,9 +85,11 @@ Feature: Increase the variety of texts.
 Details: Fetch random texts from an external API or use a larger, more diverse text dataset.
 
 🕹️ Game Modes
+
 Feature: Add different game modes.
 Details: Include modes like timed typing challenges, freestyle typing, and more.
 
 🌐 Localization
+
 Feature: Support multiple languages.
 Details: Allow users to practice typing in different languages.
