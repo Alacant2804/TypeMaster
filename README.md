@@ -41,7 +41,7 @@ Start the development server:
 npm start dev
 ```
 
-##🖱️ Usage
+## 🖱️ Usage
 
 Launch the app by running the development server.
 Press any key to start the typing test.
@@ -50,7 +50,7 @@ Monitor your performance using the timer and scoreboard.
 Complete the test to see your results in a modal with errors and points displayed.
 Click "Restart" to try again with a new text.
 
-##🎓 What I Learned
+## 🎓 What I Learned
 
 While building TypeMaster, I gained valuable insights and improved my skills in the following areas:
 
