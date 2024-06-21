@@ -29,7 +29,7 @@ function App() {
         </div>
       )}
       <div className={`window-area ${isStarted ? "" : "blurred"}`}>
-        <TypingField />
+        <TypingField isStarted={isStarted} setIsStarted={setIsStarted} />
       </div>
     </div>
   );

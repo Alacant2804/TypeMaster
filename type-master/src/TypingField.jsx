@@ -4,10 +4,9 @@ import Header from "./Header";
 import ResultModal from "./ResultModal.jsx";
 import "./TypingField.css";
 
-export default function TypingField() {
+export default function TypingField({ isStarted, setIsStarted }) {
   const [currentText, setCurrentText] = useState("");
   const [userInput, setUserInput] = useState("");
-  const [isInitialKeyPressed, setIsInitialKeyPressed] = useState(false);
   const [timer, setTimer] = useState(30);
   const [errors, setErrors] = useState(0);
   const [points, setPoints] = useState(0);
@@ -25,38 +24,22 @@ export default function TypingField() {
   }, []);
 
   useEffect(() => {
-    const handleInitialKeyPress = (e) => {
-      if (!isInitialKeyPressed) {
-        setIsInitialKeyPressed(true);
-        inputRef.current.focus();
-      }
-    };
-
-    window.addEventListener("keydown", handleInitialKeyPress);
-
-    return () => {
-      window.removeEventListener("keydown", handleInitialKeyPress);
-    };
-  }, [isInitialKeyPressed]);
-
-  useEffect(() => {
-    if (isInitialKeyPressed) {
+    if (isStarted) {
       startTimer();
+      inputRef.current.focus();
     }
 
     return () => {
       clearInterval(intervalRef.current);
     };
-  }, [isInitialKeyPressed]);
+  }, [isStarted]);
 
   const startTimer = () => {
     if (intervalRef.current) clearInterval(intervalRef.current);
-    console.log("Timer started");
 
     intervalRef.current = setInterval(() => {
       setTimer((prevTimer) => {
         const newTimer = prevTimer - 1;
-        console.log("Timer updated:", newTimer); // Debug: Show timer updates
         if (newTimer <= 0) {
           clearInterval(intervalRef.current);
           setShowModal(true);
@@ -98,7 +81,7 @@ export default function TypingField() {
 
   const closeModal = () => {
     setShowModal(false);
-    setIsInitialKeyPressed(false);
+    setIsStarted(false);
     setTimer(30);
     setUserInput("");
     initializeRandomText();
