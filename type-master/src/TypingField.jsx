@@ -10,6 +10,9 @@ export default function TypingField({ isStarted, setIsStarted }) {
   const [timer, setTimer] = useState(30);
   const [errors, setErrors] = useState(0);
   const [points, setPoints] = useState(0);
+  const [wpm, setWpm] = useState(0);
+  const [accuracy, setAccuracy] = useState(100);
+  const [totalWords, setTotalWords] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const inputRef = useRef(null);
   const intervalRef = useRef(null);
@@ -42,6 +45,8 @@ export default function TypingField({ isStarted, setIsStarted }) {
         const newTimer = prevTimer - 1;
         if (newTimer <= 0) {
           clearInterval(intervalRef.current);
+          calculateWPM();
+          calculateAccuracy();
           setShowModal(true);
           return 0;
         }
@@ -60,6 +65,8 @@ export default function TypingField({ isStarted, setIsStarted }) {
 
     if (typedText.length === currentText.length) {
       clearInterval(intervalRef.current);
+      calculateWPM();
+      calculateAccuracy();
       setShowModal(true);
     }
   };
@@ -79,6 +86,30 @@ export default function TypingField({ isStarted, setIsStarted }) {
     return errorCount;
   };
 
+  const calculateWords = () => {
+    if (!userInput || userInput.trim().length === 0) {
+      return 0;
+    }
+
+    const words = userInput.trim().split(/\s+/).length;
+    setTotalWords(words);
+    return words;
+  };
+
+  const calculateWPM = () => {
+    const WPM = calculateWords() / 0.5;
+    setWpm(WPM);
+  };
+
+  const calculateAccuracy = () => {
+    const correctCharacters = currentText
+      .split("")
+      .filter((char, index) => char === userInput[index]).length;
+    const totalCharacters = currentText.length;
+    const calculatedAccuracy = (correctCharacters / totalCharacters) * 100;
+    setAccuracy(calculatedAccuracy);
+  };
+
   const closeModal = () => {
     setShowModal(false);
     setIsStarted(false);
@@ -87,12 +118,19 @@ export default function TypingField({ isStarted, setIsStarted }) {
     initializeRandomText();
     setErrors(0);
     setPoints(0);
+    setWpm(0);
+    setAccuracy(100);
   };
 
   return (
     <div className="typing-field">
       <div className="icons-header">
-        <Header errorCount={errors} timer={timer} points={points} />
+        <Header
+          errorCount={errors}
+          timer={timer}
+          points={points}
+          totalWords={totalWords}
+        />
       </div>
       <div className="text-container">
         <div className="current-text">
@@ -122,7 +160,13 @@ export default function TypingField({ isStarted, setIsStarted }) {
         />
       </div>
       {showModal && (
-        <ResultModal errors={errors} points={points} onClose={closeModal} />
+        <ResultModal
+          errors={errors}
+          points={points}
+          onClose={closeModal}
+          WPM={wpm}
+          accuracy={accuracy}
+        />
       )}
     </div>
   );
