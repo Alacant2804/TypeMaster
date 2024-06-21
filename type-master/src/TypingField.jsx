@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import text from "./Text.jsx";
 import Header from "./Header";
+import ResultModal from "./ResultModal.jsx";
 import "./TypingField.css";
 
 export default function TypingField() {
@@ -54,6 +55,7 @@ export default function TypingField() {
   };
 
   const handleInputChange = (e) => {
+    if (showModal) return;
     const typedText = e.target.value;
     setUserInput(typedText);
 
@@ -120,18 +122,11 @@ export default function TypingField() {
           ref={inputRef}
           className="hidden-input"
           autoComplete="off"
+          disabled={showModal}
         />
       </div>
       {showModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Time's up!</h2>
-            <p>Your time is up. Here's your result:</p>
-            <p>Errors: {errors}</p>
-            <p>Points: {points}</p>
-            <button onClick={closeModal}>Restart</button>
-          </div>
-        </div>
+        <ResultModal errors={errors} points={points} onClose={closeModal} />
       )}
     </div>
   );
