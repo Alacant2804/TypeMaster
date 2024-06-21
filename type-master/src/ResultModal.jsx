@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "./ResultModal.css";
 
 export default function ResultModal({ errors, points, onClose }) {

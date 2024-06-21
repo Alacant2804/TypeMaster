@@ -29,7 +29,6 @@ export default function TypingField() {
       if (!isInitialKeyPressed) {
         setIsInitialKeyPressed(true);
         inputRef.current.focus();
-        startTimer();
       }
     };
 
@@ -37,19 +36,33 @@ export default function TypingField() {
 
     return () => {
       window.removeEventListener("keydown", handleInitialKeyPress);
+    };
+  }, [isInitialKeyPressed]);
+
+  useEffect(() => {
+    if (isInitialKeyPressed) {
+      startTimer();
+    }
+
+    return () => {
       clearInterval(intervalRef.current);
     };
   }, [isInitialKeyPressed]);
 
   const startTimer = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    console.log("Timer started");
+
     intervalRef.current = setInterval(() => {
       setTimer((prevTimer) => {
-        if (prevTimer <= 1) {
+        const newTimer = prevTimer - 1;
+        console.log("Timer updated:", newTimer); // Debug: Show timer updates
+        if (newTimer <= 0) {
           clearInterval(intervalRef.current);
           setShowModal(true);
           return 0;
         }
-        return prevTimer - 1;
+        return newTimer;
       });
     }, 1000);
   };
