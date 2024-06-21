@@ -64,32 +64,32 @@ While building TypeMaster, I gained valuable insights and improved my skills in 
 ## 📈 Improvements
 Here are some potential improvements to enhance TypeMaster:
 
-🏆 Leaderboard
+### 🏆 Leaderboard
 
 Feature: Implement a leaderboard to display the highest scores.
 Details: Allow users to submit their scores and view top performers. Use local storage or a backend service to persist data.
 
-🎯 Difficulty Levels
+### 🎯 Difficulty Levels
 
 Feature: Introduce different difficulty levels (e.g., Easy, Medium, Hard).
 Details: Adjust the length and complexity of the text based on the selected difficulty.
 
-🎨 Theming
+### 🎨 Theming
 
 Feature: Provide multiple themes.
 Details: Allow users to choose between light and dark themes or other color schemes.
 
-📚 Text Variety
+### 📚 Text Variety
 
 Feature: Increase the variety of texts.
 Details: Fetch random texts from an external API or use a larger, more diverse text dataset.
 
-🕹️ Game Modes
+### 🕹️ Game Modes
 
 Feature: Add different game modes.
 Details: Include modes like timed typing challenges, freestyle typing, and more.
 
-🌐 Localization
+### 🌐 Localization
 
 Feature: Support multiple languages.
 Details: Allow users to practice typing in different languages.
