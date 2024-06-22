@@ -17,13 +17,34 @@ export default function TypingField({ isStarted, setIsStarted }) {
   const inputRef = useRef(null);
   const intervalRef = useRef(null);
 
+  const calculateTotalWords = (initialText) => {
+    if (!initialText || initialText.trim().length === 0) {
+      return 0;
+    }
+
+    const wordsTotal = initialText.trim().split(/\s+/).length;
+    setTotalWords(wordsTotal);
+  };
+
+  const calculateWPM = (userText) => {
+    if(!userInput || userInput.trim().length === 0) {
+      setWpm(0);
+      return 0;
+    }
+    const userWords = userText.trim().split(/\s+/).length;
+    const WPM = userWords / 0.5;
+    setWpm(WPM);
+  }
+
   const initializeRandomText = () => {
     const randomIndex = Math.floor(Math.random() * text.length);
     setCurrentText(text[randomIndex]);
+    calculateTotalWords(text[randomIndex]);
   };
 
   useEffect(() => {
     initializeRandomText();
+    calculateTotalWords();
   }, []);
 
   useEffect(() => {
@@ -45,8 +66,8 @@ export default function TypingField({ isStarted, setIsStarted }) {
         const newTimer = prevTimer - 1;
         if (newTimer <= 0) {
           clearInterval(intervalRef.current);
-          calculateWPM();
           calculateAccuracy();
+          calculateWPM(userInput);
           setShowModal(true);
           return 0;
         }
@@ -65,8 +86,8 @@ export default function TypingField({ isStarted, setIsStarted }) {
 
     if (typedText.length === currentText.length) {
       clearInterval(intervalRef.current);
-      calculateWPM();
       calculateAccuracy();
+      calculateWPM(userInput);
       setShowModal(true);
     }
   };
@@ -86,27 +107,12 @@ export default function TypingField({ isStarted, setIsStarted }) {
     return errorCount;
   };
 
-  const calculateWords = () => {
-    if (!userInput || userInput.trim().length === 0) {
-      return 0;
-    }
-
-    const words = userInput.trim().split(/\s+/).length;
-    setTotalWords(words);
-    return words;
-  };
-
-  const calculateWPM = () => {
-    const WPM = calculateWords() / 0.5;
-    setWpm(WPM);
-  };
-
   const calculateAccuracy = () => {
     const correctCharacters = currentText
       .split("")
       .filter((char, index) => char === userInput[index]).length;
     const totalCharacters = currentText.length;
-    const calculatedAccuracy = (correctCharacters / totalCharacters) * 100;
+    const calculatedAccuracy = Math.floor((correctCharacters / totalCharacters) * 100);
     setAccuracy(calculatedAccuracy);
   };
 
@@ -166,6 +172,7 @@ export default function TypingField({ isStarted, setIsStarted }) {
           onClose={closeModal}
           WPM={wpm}
           accuracy={accuracy}
+          words={totalWords}
         />
       )}
     </div>

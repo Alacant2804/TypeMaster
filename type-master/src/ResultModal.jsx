@@ -6,7 +6,7 @@ export default function ResultModal({
   onClose,
   WPM,
   accuracy,
-  totalWords,
+  words,
 }) {
   return (
     <div className="modal">
@@ -14,7 +14,7 @@ export default function ResultModal({
         <h2>Time's up! Here's your result:</h2>
         <p>Errors: {errors}</p>
         <p>Points: {points}</p>
-        <p>Total Words: {totalWords}</p>
+        <p>Total Words: {words}</p>
         <p>Words per Minute: {WPM}</p>
         <p>Accuracy: {accuracy}%</p>
         <button onClick={onClose}>Restart</button>

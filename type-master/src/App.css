@@ -1,5 +1,3 @@
-/* App.css */
-
 html,
 body {
   height: 100%;
@@ -8,7 +6,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Prevent scrollbars */
+  overflow: hidden;
   background: linear-gradient(135deg, #6dd5ed, #2193b0);
 }
 
