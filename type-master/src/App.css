@@ -51,3 +51,9 @@ body {
   color: rgb(0, 0, 0);
   font-weight: bold;
 }
+
+@media (max-width: 600px) {
+  .overlay p {
+    font-size: 1.5rem;
+  }
+}
