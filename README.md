@@ -7,7 +7,7 @@
 - ✍️ **Typing Practice**: Improve your typing skills with random text challenges.
 - ⏱️ **Timer**: A countdown timer starts automatically when you begin typing.
 - 📊 **Scoreboard**: Track errors and accumulate points based on performance.
-- 🖥️ **Real-time Feedback**: Immediate visual feedback for typing accuracy.
+- 🖥️ **Real-time Feedback**: Immediate visual feedback for words per minute and typing accuracy.
 - 📱 **Responsive Design**: Optimized for both desktop and mobile devices.
 
 ## 🧰 Toolbox
