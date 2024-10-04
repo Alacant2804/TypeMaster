@@ -43,12 +43,12 @@ npm start dev
 
 ## 🖱️ Usage
 
-Launch the app by running the development server.
-Press any key to start the typing test.
-Type the displayed text accurately and quickly.
-Monitor your performance using the timer and scoreboard.
-Complete the test to see your results in a modal with errors and points displayed.
-Click "Restart" to try again with a new text.
+1. Launch the app by running the development server
+2. Press any key to start the typing test.
+3. Type the displayed text accurately and quickly.
+4. Monitor your performance using the timer and scoreboard.
+5. Complete the test to see your results in a modal with errors and points displayed.
+6. Click "Restart" to try again with a new text.
 
 ## 🎓 What I Learned
 
