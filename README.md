@@ -4,21 +4,28 @@
 
 ## 🚀 Features
 
-- ✍️ **Typing Practice**: Improve your typing skills with random text challenges.
-- ⏱️ **Timer**: A countdown timer starts automatically when you begin typing.
-- 📊 **Scoreboard**: Track errors and accumulate points based on performance.
-- 🖥️ **Real-time Feedback**: Immediate visual feedback for words per minute and typing accuracy.
-- 📱 **Responsive Design**: Optimized for both desktop and mobile devices.
+✍️ **Typing Practice**: Improve your typing skills with random text challenges.
+
+⏱️ **Timer**: A countdown timer starts automatically when you begin typing.
+
+📊 **Scoreboard**: Track errors and accumulate points based on performance.
+
+🖥️ **Real-time Feedback**: Immediate visual feedback for words per minute and typing accuracy.
+
+📱 **Responsive Design**: Optimized for both desktop and mobile devices.
 
 ## 🧰 Toolbox
 
 Here's a list of tools and technologies used in building TypeMaster:
 
-- 🛠️ **React**: For building the user interface.
-- 📦 **Vite**: For the development server and build tooling.
-- 💅 **CSS**: For styling the components.
-- 🔄 **useState & useEffect**: For state management and side effects.
-- 🕹️ **useRef**: For managing the focus and timer interval.
+🛠️ **React**: For building the user interface. <br>
+📦 **Vite**: For the development server and build tooling.
+
+💅 **CSS**: For styling the components.
+
+🔄 **useState & useEffect**: For state management and side effects.
+
+🕹️ **useRef**: For managing the focus and timer interval.
 
 ## 🛠️ Installation
 
