@@ -54,12 +54,12 @@ Click "Restart" to try again with a new text.
 
 While building TypeMaster, I gained valuable insights and improved my skills in the following areas:
 
-📜 React Basics: Understanding component structure, state, and props<br>
-🎯 State Management: Using useState and useEffect to manage dynamic data and side effects<br>
-⏲️ Timers and Intervals: Handling timers with setInterval and clearing them effectively<br>
-🔄 useRef Hook: Utilizing useRef to manage focus and interval IDs without causing unnecessary re-renders<br>
-🎨 CSS Styling: Applying responsive design principles and CSS effects like blurring and gradients<br>
-🧪 Debugging: Tackling issues with state management and component re-renders<br>
+📜 **React** Understanding component structure, state, and props<br>
+🎯 **State Management:** Using useState and useEffect to manage dynamic data and side effects<br>
+⏲️ **Timers and Intervals:** Handling timers with setInterval and clearing them effectively<br>
+🔄 **useRef Hook:** Utilizing useRef to manage focus and interval IDs without causing unnecessary re-renders<br>
+🎨 **CSS Styling:** Applying responsive design principles and CSS effects like blurring and gradients<br>
+🧪 **Debugging:** Tackling issues with state management and component re-renders<br>
 
 ## 📈 Improvements
 Here are some potential improvements to enhance TypeMaster:
