@@ -4,28 +4,21 @@
 
 ## 🚀 Features
 
-✍️ **Typing Practice**: Improve your typing skills with random text challenges.
-
-⏱️ **Timer**: A countdown timer starts automatically when you begin typing.
-
-📊 **Scoreboard**: Track errors and accumulate points based on performance.
-
-🖥️ **Real-time Feedback**: Immediate visual feedback for words per minute and typing accuracy.
-
-📱 **Responsive Design**: Optimized for both desktop and mobile devices.
+✍️ **Typing Practice**: Improve your typing skills with random text challenges<br>
+⏱️ **Timer**: A countdown timer starts automatically when you begin typing<br>
+📊 **Scoreboard**: Track errors and accumulate points based on performance<br>
+🖥️ **Real-time Feedback**: Immediate visual feedback for words per minute and typing accuracy<br>
+📱 **Responsive Design**: Optimized for both desktop and mobile devices<br>
 
 ## 🧰 Toolbox
 
 Here's a list of tools and technologies used in building TypeMaster:
 
-🛠️ **React**: For building the user interface. <br>
-📦 **Vite**: For the development server and build tooling.
-
-💅 **CSS**: For styling the components.
-
-🔄 **useState & useEffect**: For state management and side effects.
-
-🕹️ **useRef**: For managing the focus and timer interval.
+🛠️ **React**: For building the user interface<br>
+📦 **Vite**: For the development server and build tooling<br>
+💅 **CSS**: For styling the components<br>
+🔄 **useState & useEffect**: For state management and side effects<br>
+🕹️ **useRef**: For managing the focus and timer interval<br>
 
 ## 🛠️ Installation
 
@@ -61,12 +54,12 @@ Click "Restart" to try again with a new text.
 
 While building TypeMaster, I gained valuable insights and improved my skills in the following areas:
 
-- 📜 React Basics: Understanding component structure, state, and props.
-- 🎯 State Management: Using useState and useEffect to manage dynamic data and side effects.
-- ⏲️ Timers and Intervals: Handling timers with setInterval and clearing them effectively.
-- 🔄 useRef Hook: Utilizing useRef to manage focus and interval IDs without causing unnecessary re-renders.
-- 🎨 CSS Styling: Applying responsive design principles and CSS effects like blurring and gradients.
-- 🧪 Debugging: Tackling issues with state management and component re-renders.
+📜 React Basics: Understanding component structure, state, and props<br>
+🎯 State Management: Using useState and useEffect to manage dynamic data and side effects<br>
+⏲️ Timers and Intervals: Handling timers with setInterval and clearing them effectively<br>
+🔄 useRef Hook: Utilizing useRef to manage focus and interval IDs without causing unnecessary re-renders<br>
+🎨 CSS Styling: Applying responsive design principles and CSS effects like blurring and gradients<br>
+🧪 Debugging: Tackling issues with state management and component re-renders<br>
 
 ## 📈 Improvements
 Here are some potential improvements to enhance TypeMaster:
